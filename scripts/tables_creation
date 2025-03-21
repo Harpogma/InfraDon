@@ -62,3 +62,6 @@ drugs_id integer references drugs(id),
 start_date date not null,
 end_date date not null
 );
+
+
+--hola
