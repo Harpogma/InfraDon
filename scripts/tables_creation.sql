@@ -18,8 +18,8 @@ long_descr VARCHAR(40) not null
 
 create table "person"(
 id SERIAL primary key,
-last_name integer not null, 
-first_name integer not null,
+last_name VARCHAR(50) not null, 
+first_name VARCHAR(50) not null,
 address text,
 phone_number text not null, 
 gender_id integer references gender(id)
