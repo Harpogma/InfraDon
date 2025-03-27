@@ -21,7 +21,7 @@ id SERIAL primary key,
 last_name VARCHAR(50) not null, 
 first_name VARCHAR(50) not null,
 address text,
-phone_number text not null, 
+phone_number VARCHAR(40) not null, 
 gender_id integer references gender(id)
 );
 
