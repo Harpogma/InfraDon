@@ -1,64 +1,64 @@
-create table "gender"(
-    id SERIAL primary key,
-    short_descr CHAR(3) not null,
-    long_descr VARCHAR(40) not null
+CREATE TABLE "gender"(
+    id SERIAL PRIMARY KEY,
+    short_descr CHAR(3) NOT NULL,
+    long_descr VARCHAR(40) NOT NULL
 );
 
-create table "speciality"(
-    id SERIAL primary key,
-    short_descr CHAR(3) not null,
-    long_descr VARCHAR(40) not null
+CREATE TABLE "speciality"(
+    id SERIAL PRIMARY KEY,
+    short_descr CHAR(3) NOT NULL,
+    long_descr VARCHAR(40) NOT NULL
 );
 
-create table "type"(
-    id SERIAL primary key,
-    short_descr CHAR(3) not null,
-    long_descr VARCHAR(40) not null
+CREATE TABLE "type"(
+    id SERIAL PRIMARY KEY,
+    short_descr CHAR(3) NOT NULL,
+    long_descr VARCHAR(40) NOT NULL
 );
 
-create table "person"(
-    id SERIAL primary key,
-    last_name integer not null,
-    first_name integer not null,
-    address text,
-    phone_number text not null,
-    gender_id integer references gender(id)
+CREATE TABLE "person"(
+    id SERIAL PRIMARY KEY,
+    last_name VARCHAR(40) NOT NULL,
+    first_name VARCHAR(50) NOT NULL,
+    address VARCHAR(200),
+    phone_number VARCHAR(40) NOT NULL,
+    gender_id integer REFERENCES gender(id)
 );
 
-create table "patient"(
-    id SERIAL primary key,
-    date_of_birth Date not null,
-    person_id integer references person(id),
-    insurance text not null
+CREATE TABLE "patient"(
+    id SERIAL PRIMARY KEY,
+    date_of_birth Date NOT NULL,
+    person_id integer REFERENCES person(id),
+    insurance VARCHAR(30) NOT NULL
 );
 
-create table "doctor"(
-    id SERIAL primary key,
-    speciality integer references speciality(id),
-    hospital text not null,
-    person_id integer references person(id)
+CREATE TABLE "doctor"(
+    id SERIAL PRIMARY KEY,
+    speciality_id integer REFERENCES speciality(id),
+    hospital VARCHAR(50) NOT NULL,
+    person_id integer REFERENCES person(id)
 );
 
-create table "appointment"(
-    id SERIAL primary key,
-    date_of date not null,
-    motive text not null,
-    patient_id integer references patient(id),
-    doctor_id integer references doctor(id),
-    is_first_appointment boolean not null
+CREATE TABLE "appointment"(
+    id SERIAL PRIMARY KEY,
+    date_of date NOT NULL,
+    motive VARCHAR(50) NOT NULL,
+    patient_id integer REFERENCES patient(id),
+    doctor_id integer REFERENCES doctor(id),
+    is_first_appointment boolean NOT NULL
 );
 
-create table "drugs"(
-    id SERIAL primary key,
-    name text not null,
-    dosage text not null,
-    type text not null
+CREATE TABLE "drugs"(
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(50) NOT NULL,
+    dosage VARCHAR(20) NOT NULL,
+    type INTEGER REFERENCES type(id)
 );
 
-create table "prescription"(
-    id SERIAL primary key,
-    appointment_id integer references appointment(id),
-    drugs_id integer references drugs(id),
-    start_date date not null,
-    end_date date not null
+CREATE TABLE "prescription"(
+    id SERIAL PRIMARY KEY,
+    appointment_id integer REFERENCES appointment(id),
+    drugs_id integer REFERENCES drugs(id),
+    start_date date NOT NULL,
+    end_date date NOT NULL
 );
