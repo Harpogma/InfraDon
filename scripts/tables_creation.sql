@@ -62,3 +62,4 @@ CREATE TABLE "prescription"(
     start_date date NOT NULL,
     end_date date NOT NULL
 );
+
