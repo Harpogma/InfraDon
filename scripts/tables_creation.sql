@@ -1,7 +1,9 @@
-CREATE TABLE "gender"(
-    id SERIAL PRIMARY KEY,
-    short_descr CHAR(3) NOT NULL,
-    long_descr VARCHAR(40) NOT NULL
+create DATABASE hospital;
+
+create table "gender"(
+id SERIAL primary key,
+short_descr CHAR(3) not null,
+long_descr VARCHAR(40) not null
 );
 
 CREATE TABLE "speciality"(
