@@ -1,0 +1,36 @@
+-- Active: 1742562675248@@127.0.0.1@5432@Hospital
+
+-- ROLE SECRETARY
+CREATE ROLE secretary LOGIN PASSWORD 'secretary';
+
+GRANT CONNECT ON DATABASE hospital TO secretary;
+
+GRANT USAGE ON SCHEMA public TO secretary;
+
+GRANT SELECT ON ALL TABLES IN SCHEMA public TO secretary;
+
+ALTER DEFAULT PRIVILEGES IN SCHEMA public
+GRANT SELECT ON TABLES TO secretary;
+
+-- ROLE DOCTOR
+
+CREATE ROLE doctor LOGIN PASSWORD 'doctor';
+
+GRANT CONNECT ON DATABASE hospital TO doctor;
+
+GRANT USAGE ON SCHEMA public TO doctor;
+
+GRANT INSERT, UPDATE ON prescription TO doctor;
+
+-- ROLE ADMIN
+
+CREATE ROLE admin_hospital LOGIN PASSWORD 'admin';
+
+GRANT CONNECT ON DATABASE hospital TO admin_hospital;
+
+GRANT USAGE ON SCHEMA public TO admin_hospital;
+
+GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO admin_hospital;
+
+ALTER DEFAULT PRIVILEGES IN SCHEMA public
+GRANT ALL PRIVILEGES ON TABLES TO admin_hospital;
