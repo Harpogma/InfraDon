@@ -1,4 +1,4 @@
-﻿id,Assurance,Sexe,Adresse corrigee
+﻿ID Patient,Assurance,Sexe,Adresse corrigée
 1295,Sanitas,Homme,"Rue du Simplon 5, 1006 Lausanne, Vaud, Suisse"
 2700,Sanitas + complémentaire,Homme,"Avenue du Théâtre 7, 1005 Lausanne, Vaud, Suisse"
 7572,Helsana + complémentaire,Femme,"Rue Saint-Laurent 18, 1003 Lausanne, Vaud, Suisse"
