@@ -1,0 +1,15 @@
+-- !!!this request delete every table, no matter if there is relation between table!!!
+-- it leaves the DB completely empty ready to start from a clean state
+DO $$ DECLARE
+    r RECORD;
+BEGIN
+    FOR r IN (
+        SELECT tablename FROM pg_tables 
+        WHERE schemaname = 'public'
+    ) LOOP
+        EXECUTE 'DROP TABLE IF EXISTS public.' || quote_ident(r.tablename) || ' CASCADE';
+    END LOOP;
+END $$;
+
+-- this request is to reset the increment of the SERIAL PRIMARY KEY to 1
+ALTER SEQUENCE gender_id_seq RESTART WITH 1;
