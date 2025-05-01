@@ -8,7 +8,7 @@ CREATE TABLE IF NOT EXISTS temp_patient (
 );
 
 COPY temp_patient (Id, Nom, Prenom, Date_de_naissance, Adresse, Telephone)
-FROM '/private/tmp/patient.csv'
+FROM 'C:\Users\marc.bridy\InfraDon\InfraDon\data\csv\patient.csv'
 WITH CSV HEADER;
 
 CREATE TABLE IF NOT EXISTS temp_patient_update (
@@ -19,7 +19,7 @@ CREATE TABLE IF NOT EXISTS temp_patient_update (
 );
 
 COPY temp_patient_update (Id, Assurance, Sexe, Adresse)
-FROM '/private/tmp/patient_update.csv'
+FROM 'C:\Users\marc.bridy\InfraDon\InfraDon\data\csv\patient_update.csv'
 WITH CSV HEADER;
 
 UPDATE patient
@@ -33,3 +33,9 @@ INSERT INTO patient (date_of_birth, person_id)
 SELECT Date_de_naissance, Id
 FROM temp_patient
 ON CONFLICT (id) DO NOTHING;
+
+create table "insurance"(
+id SERIAL primary key,
+long_descr VARCHAR(40) not null,
+supplementary BOOLEAN not null
+);

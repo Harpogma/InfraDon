@@ -27,11 +27,11 @@ phone_number VARCHAR(40) not null,
 gender_id INTEGER REFERENCES gender(id)
 );
 
-CREATE TABLE "patient"(
-    id SERIAL PRIMARY KEY,
-    date_of_birth Date NOT NULL,
-    person_id integer REFERENCES person(id),
-    insurance VARCHAR(30) NOT NULL
+create table "patient"(
+id SERIAL primary key,
+date_of_birth Date not null,
+person_id integer references person(id),
+insurance_id integer references insurance(id)
 );
 
 CREATE TABLE "doctor"(
@@ -64,4 +64,5 @@ CREATE TABLE "prescription"(
     start_date date NOT NULL,
     end_date date NOT NULL
 );
+
 

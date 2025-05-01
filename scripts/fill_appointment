@@ -1,0 +1,16 @@
+CREATE TEMP TABLE "temp_appointment"(
+    id INTEGER,
+    patient_id INTEGER,
+    doctor_id INTEGER,
+    date_of DATE,
+    motive VARCHAR(50)
+);
+
+COPY temp_appointment (id, patient_id, doctor_id, date_of, motive)
+FROM 'C:\Users\marc.bridy\InfraDon\InfraDon\data\csv\appointment.csv' --À CHANGER SELON LE CHEMIN D'ACCES
+DELIMITER ',' CSV HEADER;
+
+INSERT INTO appointment (id, patient_id, doctor_id, date_of, motive, is_first_appointment)
+SELECT ta.id, ta.patient_id, ta.doctor_id, ta.date_of, ta.motive, false
+FROM temp_appointment ta
+ON CONFLICT (id) DO NOTHING;

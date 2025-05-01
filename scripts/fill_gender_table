@@ -6,7 +6,7 @@ CREATE TEMP TABLE temp_gender (
 );
 
 COPY temp_gender (id, assurance, sexe, adresse_corrigee) 
-FROM '/private/tmp/patient_update.csv' 
+FROM 'C:\Users\marc.bridy\InfraDon\InfraDon\data\csv\patient_update.csv' 
 WITH CSV HEADER;
 
 

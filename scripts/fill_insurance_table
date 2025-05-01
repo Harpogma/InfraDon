@@ -6,7 +6,7 @@ CREATE TEMP TABLE temp_insurance (
 );
 
 COPY temp_insurance (Id, Assurance, Sexe, Adresse)
-FROM '/private/tmp/patient_update.csv'
+FROM 'C:\Users\marc.bridy\InfraDon\InfraDon\data\csv\patient_update.csv'
 WITH CSV HEADER;
 
 INSERT INTO insurance (long_descr, supplementary)

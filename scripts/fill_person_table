@@ -8,7 +8,7 @@ CREATE TEMP TABLE temp_person (
 );
 
 COPY temp_person (Id, Nom, Prenom, Date_de_naissance, Adresse, Telephone) 
-FROM '/private/tmp/patient.csv' 
+FROM 'C:\Users\marc.bridy\InfraDon\InfraDon\data\csv\patient.csv' 
 WITH CSV HEADER;
 
 INSERT INTO person (id, last_name, first_name, address, phone_number)
@@ -23,7 +23,7 @@ CREATE TEMP TABLE temp_person_update (
 );
 
 COPY temp_person_update (Id, Assurance, Sexe, Adresse) 
-FROM '/private/tmp/patient_update.csv' 
+FROM 'C:\Users\marc.bridy\InfraDon\InfraDon\data\csv\patient.csv' 
 WITH CSV HEADER;
 
 UPDATE person
