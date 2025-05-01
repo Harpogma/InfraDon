@@ -16,13 +16,13 @@ CREATE TABLE "type"(
     long_descr VARCHAR(40) NOT NULL
 );
 
-CREATE TABLE "person"(
-    id SERIAL PRIMARY KEY,
-    last_name VARCHAR(40) NOT NULL,
-    first_name VARCHAR(50) NOT NULL,
-    address VARCHAR(200),
-    phone_number VARCHAR(40) NOT NULL,
-    gender_id integer REFERENCES gender(id)
+create table "person"(
+id SERIAL PRIMARY KEY,
+last_name VARCHAR(50) not null, 
+first_name VARCHAR(50) not null,
+address text,
+phone_number VARCHAR(40) not null, 
+gender_id INTEGER REFERENCES gender(id)
 );
 
 CREATE TABLE "patient"(
