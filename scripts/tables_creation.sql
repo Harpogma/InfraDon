@@ -12,10 +12,10 @@ CREATE TABLE "speciality"(
     long_descr VARCHAR(40) NOT NULL
 );
 
-CREATE TABLE "type"(
-    id SERIAL PRIMARY KEY,
-    short_descr CHAR(3) NOT NULL,
-    long_descr VARCHAR(40) NOT NULL
+CREATE TABLE "insurance"(
+id SERIAL primary key,
+long_descr VARCHAR(40) not null,
+supplementary BOOLEAN not null
 );
 
 create table "person"(
