@@ -6,7 +6,7 @@ CREATE TEMP TABLE "temp_drugs"(
 );
 
 COPY temp_drugs (id, name, dosage, type)
-FROM 'C:\Users\marc.bridy\InfraDon\InfraDon\data\csv\drug.csv' --À CHANGER SELON LE CHEMIN D'ACCES
+FROM '/private/tmp/drug.csv' --À CHANGER SELON LE CHEMIN D'ACCES
 DELIMITER ',' CSV HEADER;
 
 INSERT INTO drugs (id, name, dosage, type)
