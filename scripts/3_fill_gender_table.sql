@@ -10,7 +10,7 @@ FROM '/private/tmp/patient_update.csv'
 WITH CSV HEADER;
 
 
-INSERT INTO gender (short_descr, long_descr)
+INSERT INTO gender (long_descr)
 SELECT DISTINCT       
        CASE 
            WHEN TRIM(sexe) IN ('Homme') THEN 'Homme'

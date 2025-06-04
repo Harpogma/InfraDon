@@ -1,4 +1,4 @@
-CREATE TEMP TABLE temp_doctor (
+CREATE TEMP TABLE IF NOT EXISTS temp_doctor (
     id INTEGER,
     nom TEXT, 
     prenom TEXT,
@@ -11,7 +11,7 @@ COPY temp_doctor (id, nom, prenom, specialite, hopital, telephone)
 FROM '/private/tmp/doctor.csv'
 WITH CSV HEADER;
 
-CREATE TEMP TABLE temp_doctor_update (
+CREATE TEMP TABLE IF NOT EXISTS temp_doctor_update (
     id INTEGER,
     sexe TEXT,
     adresse_update TEXT

@@ -32,7 +32,7 @@ insurance_id integer references insurance(id)
 
 create table "doctor"(
 id SERIAL primary key,
-hospital text not null,
+hospital VARCHAR (80) not null,
 hospital_address VARCHAR(80),
 speciality_id integer references speciality(id), 
 person_id integer references person(id)
@@ -41,7 +41,7 @@ person_id integer references person(id)
 create table "appointment"(
 id SERIAL primary key, 
 date_of date not null,
-motive text not null,
+motive VARCHAR(30) not null,
 patient_id integer references patient(id),
 doctor_id integer references doctor(id),
 is_first_appointment boolean not null
@@ -49,9 +49,9 @@ is_first_appointment boolean not null
 
 create table "drugs"(
 id SERIAL primary key, 
-name text not null, 
-dosage text not null,
-type text not null
+name VARCHAR(50) not null, 
+dosage VARCHAR(20) not null,
+type VARCHAR(30) not null
 );
 
 create table "prescription"(

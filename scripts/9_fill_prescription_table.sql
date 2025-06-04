@@ -6,7 +6,7 @@ CREATE TEMP TABLE "temp_prescription"(
 );
 
 COPY temp_prescription (id, appointment_id, drugs_id, duration)
-FROM '/private/tmp/prescription.csv' --À CHANGER SELON LE CHEMIN D'ACCES
+FROM '/private/tmp/prescription.csv'
 DELIMITER ',' CSV HEADER;
 
 INSERT INTO prescription (id, appointment_id, drugs_id, start_date, end_date)

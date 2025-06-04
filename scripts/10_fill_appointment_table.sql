@@ -7,7 +7,7 @@ CREATE TEMP TABLE "temp_appointment"(
 );
 
 COPY temp_appointment (id, patient_id, doctor_id, date_of, motive)
-FROM '/private/tmp/appointment.csv' --À CHANGER SELON LE CHEMIN D'ACCES
+FROM '/private/tmp/appointment.csv' 
 DELIMITER ',' CSV HEADER;
 
 INSERT INTO appointment (id, date_of, motive, patient_id, doctor_id, is_first_appointment)
