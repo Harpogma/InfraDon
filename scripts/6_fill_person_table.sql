@@ -1,4 +1,4 @@
-CREATE TEMP TABLE temp_person (
+CREATE TEMP TABLE  IF NOT EXISTS temp_person (
     Id INTEGER,
     Nom TEXT,
     Prenom TEXT,
@@ -15,7 +15,7 @@ INSERT INTO person (id, last_name, first_name, phone_number)
 SELECT Id, Nom, Prenom, Telephone FROM temp_person
 ON CONFLICT (Id) DO NOTHING;
 
-CREATE TEMP TABLE temp_person_update (
+CREATE TEMP TABLE IF NOT EXISTS temp_person_update (
     Id INTEGER,
     Assurance TEXT,
     Sexe TEXT,
@@ -32,7 +32,7 @@ FROM temp_person_update tp
 INNER JOIN gender g ON g.long_descr = tp.Sexe
 WHERE person.id = tp.Id;
 
-CREATE TEMP TABLE temp_doctor (
+CREATE TEMP TABLE IF NOT EXISTS temp_doctor (
     Id INTEGER,
     Nom TEXT, 
     Prenom TEXT,

@@ -1,4 +1,4 @@
-CREATE TEMP TABLE "temp_drugs"(
+CREATE TEMP TABLE IF NOT EXISTS "temp_drugs"(
     id INTEGER,
     name text,
     dosage text,

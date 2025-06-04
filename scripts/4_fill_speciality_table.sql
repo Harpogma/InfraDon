@@ -1,4 +1,4 @@
-CREATE TEMP TABLE temp_speciality (
+CREATE TEMP TABLE  IF NOT EXISTS temp_speciality (
     id INTEGER,
     nom TEXT, 
     prenom TEXT,

@@ -1,4 +1,4 @@
-CREATE TEMP TABLE "temp_prescription"(
+CREATE TEMP TABLE IF NOT EXISTS "temp_prescription"(
     id INTEGER,
     appointment_id INTEGER,
     drugs_id INTEGER,

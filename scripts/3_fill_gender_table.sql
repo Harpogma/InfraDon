@@ -1,4 +1,4 @@
-CREATE TEMP TABLE temp_gender (
+CREATE TEMP TABLE  IF NOT EXISTS temp_gender (
     id integer,
     assurance TEXT,
     sexe TEXT,

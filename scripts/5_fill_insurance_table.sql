@@ -1,4 +1,4 @@
-CREATE TEMP TABLE temp_insurance (
+CREATE TEMP TABLE  IF NOT EXISTS temp_insurance (
     Id INTEGER,
     Assurance TEXT,
     Sexe TEXT,
