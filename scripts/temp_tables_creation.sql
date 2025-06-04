@@ -39,3 +39,6 @@ WHERE NOT EXISTS (
     WHERE gender.short_descr = temp_gender.short_descr 
     AND gender.long_descr = temp_gender.long_descr
 );
+
+SELECT *
+FROM gender;

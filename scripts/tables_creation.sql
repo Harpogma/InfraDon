@@ -1,3 +1,4 @@
+
 create DATABASE hospital;
 
 create table "gender"(

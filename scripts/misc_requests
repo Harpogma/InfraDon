@@ -13,3 +13,5 @@ END $$;
 
 -- this request is to reset the increment of the SERIAL PRIMARY KEY to 1
 ALTER SEQUENCE gender_id_seq RESTART WITH 1;
+
+DROP DATABASE Hospital;
