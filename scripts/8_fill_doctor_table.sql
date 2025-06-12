@@ -24,7 +24,7 @@ WITH CSV HEADER;
 INSERT INTO doctor (hospital, person_id)
 SELECT hopital, id
 FROM temp_doctor
-ON CONFLICT (id) DO NOTHING;
+ON CONFLICT (person_id) DO NOTHING;
 
 
 UPDATE doctor d
