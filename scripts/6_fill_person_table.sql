@@ -29,7 +29,11 @@ WITH CSV HEADER;
 UPDATE person
 SET gender_id = g.id
 FROM temp_person_update tp
-INNER JOIN gender g ON g.long_descr = tp.Sexe
+JOIN gender g ON g.long_descr = 
+    CASE 
+        WHEN tp.Sexe IS NULL OR TRIM(tp.Sexe) = '' THEN 'N/A'
+        ELSE tp.Sexe
+    END
 WHERE person.id = tp.Id;
 
 CREATE TEMP TABLE IF NOT EXISTS temp_doctor (
